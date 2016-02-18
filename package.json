@@ -1,0 +1,28 @@
+{
+  "name": "greenfield-hawks",
+  "version": "0.0.1",
+  "description": "For anyone looking for a cursory glance at the startup phenomenon.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "~4.3.1",
+    "npm": "~2.14.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuthinlikeacleanbathroom/nuthinlikeacleanbathroom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuthinlikeacleanbathroom/nuthinlikeacleanbathroom/issues"
+  },
+  "homepage": "https://github.com/nuthinlikeacleanbathroom/nuthinlikeacleanbathroom#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "morgan": "^1.6.1"
+  }
+}
