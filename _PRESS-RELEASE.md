@@ -1,4 +1,20 @@
 # Project Name #
+Placr
+Happend
+HappenedHere
+PlaStory (there already is Placetory that does exactly what ours wants to do)
+OnThisSpot
+RightThere
+
+histomap
+histography
+historian
+histopo
+histapo
+mapster
+histap
+mapistry
+nuthinlikeacleanbathroom
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -17,28 +33,29 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  Mapster(temp)
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  For those who have always wanted to tell the untold story of their neighborhood (bathroom).
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  History aggregator of your locale.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  Upholding the norms and cultures of waterclosets the world over, where previously lax.
+  Stepping into a restroom rarely comes with warnings, and can be a scary experience.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  Like yelp does for businesses, Mapster allows communities to easily get information about restrooms before they enter, and chat about the happenings wherever they are.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  "Mapster is the real people's history" - John
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Drop a pin, and write your story. Or browse through nearby histories.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "This app is the shit" - Ian
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  Drop your log at Mapster.com!
