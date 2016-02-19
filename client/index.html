@@ -33,7 +33,8 @@
 	$(function(){
 		var startups = new Startups({
 			name:'Company X', 
-			location: "San Francisco, CA"
+			city: "San Francisco",
+			state: "CA"
 		});
 		var app = new AppModel(startups);
 		var appView = new AppView({model: app});
