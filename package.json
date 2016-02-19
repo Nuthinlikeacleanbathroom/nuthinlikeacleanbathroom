@@ -4,14 +4,11 @@
   "description": "For anyone looking for a cursory glance at the startup phenomenon.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "engines": {
     "node": "~4.3.1",
     "npm": "~2.14.12"
-  },
-  "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -27,6 +24,7 @@
     "body-parser": "^1.15.0",
     "bower": "^1.7.7",
     "express": "^4.13.4",
+    "express-favicon": "^1.0.1",
     "morgan": "^1.6.1"
   }
 }
