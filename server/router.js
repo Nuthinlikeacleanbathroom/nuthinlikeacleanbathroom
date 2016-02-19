@@ -6,5 +6,8 @@ module.exports = function(app) {
   .get(function(req, res, next) {
     res.json('Hello World');
   });
+  
+  app.route('/companies')
+    .get(companies.getAll)
 }
 
