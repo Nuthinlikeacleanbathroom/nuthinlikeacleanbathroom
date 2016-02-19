@@ -1,0 +1,21 @@
+{
+  "name": "greenfield-hawks",
+  "description": "For anyone looking for a cursory glance at the startup phenomenon.",
+  "main": "index.js",
+  "authors": [
+    "Alex Ko",
+    "J.T Yim",
+    "John Soo",
+    "Ian Akers"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alexko13/nuthinlikeacleanbathroom",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
