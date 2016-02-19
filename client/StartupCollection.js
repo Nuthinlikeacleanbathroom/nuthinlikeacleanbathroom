@@ -1,28 +1,29 @@
 var Startups = Backbone.Collection.extend({
 	model: Startup,
-  	urlRoute: "/startups",
+  	url : "/startups",
 
-	initialize: function(){
-		this.update();
-	},
+	// initialize: function(){
+	//
+	// }
 
-	update: function(model)
-		$.ajax({
-			url: "/startups",	 	// confirm
-			type: 'GET',
-			contentType: 'application/json',
-			data: ,
-			success: function(data) {
-				// expect: json?
-				// data.forEach(function(startup){
-					// new model
-				// })
-				// this.trigger('create')
-			},
-			error: function(data) {
-				console.error('Failed to Fetch');
-			}
-		});
+	// update: function(model){
+		// 	$.ajax({
+		// 		url: "/startups",	 	// confirm
+		// 		type: 'GET',
+		// 		contentType: 'application/json',
+		// 		data: ,
+		// 		success: function(data) {
+		// 			// expect: json?
+		// 			// data.forEach(function(startup){
+		// 				// new model
+		// 			// })
+		// 			// this.trigger('create')
+		// 		},
+		// 		error: function(data) {
+		// 			console.error('Failed to Fetch');
+		// 		}
+		// 	});
+	// }
 
-	}
-});
+
+})

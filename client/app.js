@@ -1,7 +1,12 @@
 var AppModel = Backbone.Model.extend({
-	initialize: function(){
-		this.set('Startups', new Startups());
+
+	initialize: function(collection){
+		if (collection){
+			this.set('startups', collection);
+		}else{
+			this.set('startups', new Startups());
+			this.get('startups').fetch();
+		}
 	}
 
-	// 
 })

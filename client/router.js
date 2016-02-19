@@ -7,12 +7,7 @@ app.Router = Backbone.Router.extend({
 		'' : 'index',
 	},
 
-	swapView: function(view){
-	},
-
 	index: function(){
-	},
-
-	create: function(){
 	}
+
 });

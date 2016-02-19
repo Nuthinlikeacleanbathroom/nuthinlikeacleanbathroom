@@ -1,7 +1,6 @@
  var Startup = Backbone.Model.extend({
-	rootUrl: "/company/",
 	defaults: {
-		compName: "",
+		name: "",
 		location: "",
 		fundingStatus: "",
 		active: false

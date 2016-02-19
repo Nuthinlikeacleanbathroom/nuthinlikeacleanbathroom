@@ -17,7 +17,7 @@
 
 	<!-- Company List -->
 	<h1> Startup List </h1>
-	<div id="<container></container>">
+	<div id="container">
 
 	</div>
 
@@ -26,14 +26,18 @@
 	<script src="StartupCollection.js"></script>
 	<script src="AppView.js"></script>
 	<script src="StartupListView.js"></script>
-	<script src="StartupListEntryView.js"></script>
+	<script src="StartupView.js"></script>
 	<script src="App.js"></script>
 
 	<script type="text/javascript">
 	$(function(){
-		var app = new AppModel();
+		var startups = new Startups({
+			name:'Company X', 
+			location: "San Francisco, CA"
+		});
+		var app = new AppModel(startups);
 		var appView = new AppView({model: app});
-		$('body').append(appView.render());
+		$('#container').append(appView.render());
 	});
 	</script>
 
