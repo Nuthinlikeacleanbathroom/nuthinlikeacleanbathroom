@@ -1,8 +1,9 @@
  var Startup = Backbone.Model.extend({
 	defaults: {
 		name: "",
-		location: "",
+		city: "",
+		state: "",
 		fundingStatus: "",
-		active: false
+		active: true
 	}
 })
