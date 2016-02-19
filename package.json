@@ -10,6 +10,9 @@
     "node": "~4.3.1",
     "npm": "~2.14.12"
   },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuthinlikeacleanbathroom/nuthinlikeacleanbathroom.git"
@@ -22,6 +25,7 @@
   "homepage": "https://github.com/nuthinlikeacleanbathroom/nuthinlikeacleanbathroom#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "bower": "^1.7.7",
     "express": "^4.13.4",
     "morgan": "^1.6.1"
   }
