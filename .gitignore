@@ -5,7 +5,5 @@ bower_components/
 build/
 dist/
 
-#floobits
 .floo
-.floobit
 .flooignore
