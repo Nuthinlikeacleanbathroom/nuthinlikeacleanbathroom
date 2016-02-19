@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Home</title>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
 </head>
 <body>
-  
+
+      <!-- search option -->
+      <form action="" id="" method="">
+	      <input type="" name="" id=""/>
+      		<button type="submit"></button>
+      </form>
+
+	<!-- Company List -->
+	<h1> Startup List </h1>
+	<div id="container">
+
+	</div>
+
+
+	<script src="StartupModel.js"></script>
+	<script src="StartupCollection.js"></script>
+	<script src="AppView.js"></script>
+	<script src="StartupListView.js"></script>
+	<script src="StartupView.js"></script>
+	<script src="App.js"></script>
+
+	<script type="text/javascript">
+	$(function(){
+		var startups = new Startups({
+			name:'Company X', 
+			location: "San Francisco, CA"
+		});
+		var app = new AppModel(startups);
+		var appView = new AppView({model: app});
+		$('#container').append(appView.render());
+	});
+	</script>
+
 </body>
 </html>
