@@ -3,19 +3,24 @@ var Startups = Backbone.Collection.extend({
   	url : '/startups',
 
 	initialize: function(){
-		(function init (_this){
-			return $.ajax({
-					url: 'http://127.0.0.1:8000/companies',
-					method: 'GET'
-				})
-				.then(function(results) {
-					console.log(results);
-					results.forEach(function(result) {
-						_this.add(new Startup(result));
-					});
-				})
-			}
-		)(this);
+		this.fetch();
+	}
+	
+	fetch: function() {
+		(function(_this) {
+			$.ajax({
+				url: 'http://127.0.0.1:8000/companies',
+				method: 'GET'
+			})
+			.then(function(results) {
+				results.forEach(function(result) {
+					_this.add(new Startup(result));
+				});
+			})
+			.catch(function(error) {
+				console.error('There was an error fetching companies: ', error);
+			});
+		})(this)
 	}
 
 	// update: function(model){
