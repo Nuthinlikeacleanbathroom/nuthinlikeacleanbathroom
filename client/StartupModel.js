@@ -1,4 +1,4 @@
- var Startup = Backbone.Model.extend({
+var Startup = Backbone.Model.extend({
 	defaults: {
 		name: "",
 		city: "",

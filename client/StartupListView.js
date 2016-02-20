@@ -1,5 +1,5 @@
 var StartupListView = Backbone.View.extend({
-	tagName: "table",
+	tagName: 'table',
 	initialize: function(StartupCollection){
 		this.collection = StartupCollection;
 		this.render();
