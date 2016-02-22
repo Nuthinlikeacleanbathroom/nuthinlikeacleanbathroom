@@ -1,22 +1,14 @@
 var AppView = Backbone.View.extend({
 	initialize: function(){
 		this.startupListView = new StartupListView({collection: this.model.get('startups')});
-    		this.model.get('startups').on("reset", this.render);
-		this.render();
+		console.log(this.model.get('startus'));
+    this.model.get('startups').on("reset", this.render, this);
 	},
 	events:{
 
 	},
 	render: function(){
-	    	return this.$el.html(this.startupListView.$el);
+	  return this.$el.append(this.startupListView.render());
 	}
 
 })
-
-
-// render: function(){
-//     return this.$el.html([
-//       this.playerView.$el,
-//       this.libraryView.$el
-//     ]);
-  // }
