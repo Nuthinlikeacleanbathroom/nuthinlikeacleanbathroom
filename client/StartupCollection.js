@@ -1,10 +1,9 @@
 var Startups = Backbone.Collection.extend({
 	model: Startup,
-  	url : '/startups',
+  url : '/startups',
 
 	initialize: function(){
-		this.fetch();
-	}
+	},
 	
 	fetch: function() {
 		(function(_this) {
@@ -14,11 +13,9 @@ var Startups = Backbone.Collection.extend({
 			})
 			.then(function(results) {
 				results.forEach(function(result) {
+					console.log(result);
 					_this.add(new Startup(result));
 				});
-			})
-			.catch(function(error) {
-				console.error('There was an error fetching companies: ', error);
 			});
 		})(this)
 	}
