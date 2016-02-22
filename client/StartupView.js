@@ -1,16 +1,16 @@
 var StartupView = Backbone.View.extend({
 	tagName: 'tr',
-	template: _.template('<td><%= name %></td><td><%= city %></td><td><%= state %></td>'),
+	template: _.template('<td><%= name %></td><td><%= city %></td><td><%= state_code %></td>'),
 
 	initialize: function(){
 		this.render();
 	},
 
-	events: { 
+	events: {
 	},
 
 	render: function(){
-		return this.$el.html(this.template(this.model.attributes));
+	  return this.$el.html(this.template(this.model.attributes));
 	}
 
 });
