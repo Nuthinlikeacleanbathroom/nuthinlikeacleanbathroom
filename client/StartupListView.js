@@ -10,6 +10,6 @@ var StartupListView = Backbone.View.extend({
 		this.$el.html('<th></th>').append(
 	  this.collection.map(function(startup){
 		  return new StartupView({model: startup}).render();
-		});
+		}));
 	}
 })
