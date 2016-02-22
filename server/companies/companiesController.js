@@ -6,7 +6,6 @@ var getAll = function(req, res) {
       if (err) {
         return console.log('There was an error querying the database: ', err);
       }
-      
       res.status(200).json(results);
     });
 };

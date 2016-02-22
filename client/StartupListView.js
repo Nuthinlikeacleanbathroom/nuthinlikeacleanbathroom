@@ -11,5 +11,6 @@ var StartupListView = Backbone.View.extend({
 	  this.collection.map(function(startup){
 		  return new StartupView({model: startup}).render();
 		}));
+		return this.$el;
 	}
 })
