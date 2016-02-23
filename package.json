@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install",
-    "start": "nodemon ./server/index.js"
+    "start": "node ./server/index.js"
   },
   "engines": {
     "node": "~4.3.1",
