@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 
-var mysqlUri = process.env.CLEARDB_DATABASE_URI || 'localhost';
+var mysqlUri = process.env.CLEARDB_DATABASE_URL || 'localhost';
 
 var connection = mysql.createConnection({
   host: mysqlUri,
