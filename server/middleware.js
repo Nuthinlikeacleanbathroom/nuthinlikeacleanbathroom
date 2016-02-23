@@ -6,6 +6,7 @@ var favicon = require('express-favicon');
 var rootDir = __dirname + '/../';
 
 module.exports = function(app, express) {
+  // Middleware for formatting stuff and logs
   app.use(morgan('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
