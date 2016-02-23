@@ -2,6 +2,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var router = require('./router');
 var favicon = require('express-favicon');
+var path = require('path');
 
 var rootDir = __dirname + '/../';
 
@@ -16,8 +17,8 @@ module.exports = function(app, express) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  app.use(favicon(__dirname + '/favicon.ico'));
-  app.use(express.static(__dirname + '/../client'));
+  app.use(favicon(path.join(__dirname + '/favicon.ico')));
+  app.use(express.static(path.join(__dirname + '/../client/')));
 
   router(app);
 };
