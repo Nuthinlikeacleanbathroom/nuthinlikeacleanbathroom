@@ -17,7 +17,7 @@ module.exports = function(app, express) {
     next();
   });
   app.use(favicon(__dirname + '/favicon.ico'));
-  app.use(express.static(__dirname + '/../public'));
+  app.use(express.static(__dirname + '/../client'));
 
   router(app);
 };
