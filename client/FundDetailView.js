@@ -16,18 +16,7 @@ var FundDetailView = Backbone.View.extend({
   initialize: function(){
   },
 
-  // TO DO
-  events: {
-    'click' : 'hideDetails'
-  },
-
   render: function(){
-    return this.$el.html(this.template(this.model.attributes))
-  },
-
-  // TO DO
-  hideDetails: function(e){
-  
+    return this.$el.html(this.template(this.model.attributes));
   }
-
 });
