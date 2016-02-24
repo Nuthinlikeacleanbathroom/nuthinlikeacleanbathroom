@@ -7,7 +7,7 @@ var StartupListView = Backbone.View.extend({
 
   render: function(){
     this.$el.children().detach();
-    this.$el.html('<th>Financial Organization</th>').append(
+    this.$el.html('<th>Financial Organization</th><th>Location</th>').append(
     this.collection.map(function(startup){
       return new StartupView({model: startup}).render();
     }));

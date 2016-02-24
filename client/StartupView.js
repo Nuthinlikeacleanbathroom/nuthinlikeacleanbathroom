@@ -5,21 +5,21 @@ var StartupView = Backbone.View.extend({
   template: _.template('<td><%= name %></td><td><%= city %></td><td><%= state_code %></td>'),
 
   initialize: function(){
-    this.render();
+    this.fundDetailView = new FundDetailView({model: this.model});
   },
 
   events: {
-    'click' : 'showDetails'
+    'click' : 'toggleDetails'
   },
 
   render: function(){
-    return this.$el.html(this.template(this.model.attributes));
+    this.$el.html(this.template(this.model.attributes));
+    this.$el.append(this.fundDetailView.render().hide());
+    return this.$el;
   },
 
-  showDetails: function(e){
-    this.$el.children().detach();
-    this.fundDetailView = new FundDetailView({model: this.model});
-    return this.$el.append(this.fundDetailView.render());
+  toggleDetails: function(e){
+    this.fundDetailView.$el.toggle();
   }
 
 });
