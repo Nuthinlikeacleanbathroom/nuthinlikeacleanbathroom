@@ -4,7 +4,8 @@
   "description": "For anyone looking for a cursory glance at the startup phenomenon.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node ./server/index.js"
   },
   "engines": {
     "node": "~4.3.1",
@@ -26,6 +27,7 @@
     "express": "^4.13.4",
     "express-favicon": "^1.0.1",
     "morgan": "^1.6.1",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "path": "^0.12.7"
   }
 }

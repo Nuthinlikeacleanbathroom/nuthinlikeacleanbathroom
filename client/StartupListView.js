@@ -1,19 +1,16 @@
 var StartupListView = Backbone.View.extend({
-	tagName: 'table',
-	initialize: function(StartupCollection){
-		this.collection = StartupCollection;
-		this.render();
-	},
+  tagName: 'table',
 
-	render: function(){
-		this.$el.children().detach();
-    		console.log(this.collection);
-		this.$el.html('<th></th>').append(
-			this.collection.map(function(startup){
-        			console.log('creatingstartupviews');
-				return new StartupView({model: startup}).render();
-			})
-		)
-	}
+  initialize: function(){
+    this.render();
+  },
 
+  render: function(){
+    this.$el.children().detach();
+    this.$el.html('<th>Financial Organization</th><th>Location</th>').append(
+    this.collection.map(function(startup){
+      return new StartupView({model: startup}).render();
+    }));
+    return this.$el;
+  }
 })

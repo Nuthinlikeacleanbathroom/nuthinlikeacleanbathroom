@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Home</title>
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone.js"></script>
 </head>
+
 <body>
+  <!-- Search Option -->
+  <form action="" id="" method="">
+    <input type="" name="" id=""/>
+    <button type="submit">SEARCH</button>
+  </form>
+  
+  <!-- Fund List -->
+  <h1> Funds</h1>
+  <div id="container">
+    <!-- Individual Funds -->
+  </div>
 
-      <!-- search option -->
-      <form action="" id="" method="">
-	      <input type="" name="" id=""/>
-      		<button type="submit">Submit</button>
-      </form>
+  <script src="StartupModel.js"></script>
+  <script src="StartupCollection.js"></script>
+  <script src="AppView.js"></script>
+  <script src="StartupListView.js"></script>
+  <script src="StartupView.js"></script>
+  <script src="FundDetailView.js"></script>
+  <script src="app.js"></script>
 
-	<!-- Company List -->
-	<h1> Startup List </h1>
-	<div id="container">
-
-	</div>
-
-
-	<script src="StartupModel.js"></script>
-	<script src="StartupCollection.js"></script>
-	<script src="AppView.js"></script>
-	<script src="StartupListView.js"></script>
-	<script src="StartupView.js"></script>
-	<script src="app.js"></script>
-
-	<script type="text/javascript">
-	$(function(){
-		var startups = new Startups();
-		var app = new AppModel(startups);
-		var appView = new AppView({model: app});
-		$('#container').append(appView.render());
-	});
-	</script>
+  <script type="text/javascript">
+    // Init( ); 
+    $(function(){
+      var app = new AppModel();
+      var appView = new AppView({model: app});
+      $("#container").append(appView.render());
+    });
+  
+  </script>
+</body>
+</html>

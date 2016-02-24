@@ -1,15 +1,15 @@
 var Startup = Backbone.Model.extend({
-	defaults: {
-		name: "",
-		city: "",
-		state: "",
-		fundingStatus: "",
-		active: true
-	},
+  defaults: {
+    // name: '',
+    // city: '',
+    // state: '',
+    // image_url : '',
+  },
   
   initialize: function(params) {
-    this.name = params.name;
-    this.state = params.state_code;
-    this.city = params.city;
+  //   this.set('name', params.name);
+  //   this.set('state', params.state_code);
+  //   this.set('city', params.city);
   }
+
 })

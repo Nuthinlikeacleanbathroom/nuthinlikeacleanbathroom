@@ -1,14 +1,14 @@
 var Companies = require('./companiesModel');
 
+// Queries DB for all companies for name, city and state columns. This serves the GET request to '/companies'
 var getAll = function(req, res) {
-  Companies.query('select name, state_code, city from cb_objects where state_code is NOT NULL && city is NOT NULL limit 100', 
-    function(err, results) {
-      if (err) {
-        return console.log('There was an error querying the database: ', err);
-      }
-      
-      res.send(200, results);
-    });
+  Companies.query('select * from fund_list', function(err, results) {
+    if (err) {
+      console.log('There was an error querying the database:', err);
+      return res.send(500);
+    }
+    res.status(200).json(results);
+  });
 };
 
 module.exports = {

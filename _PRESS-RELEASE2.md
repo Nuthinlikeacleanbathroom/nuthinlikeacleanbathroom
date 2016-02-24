@@ -23,4 +23,4 @@
   "I always wanted to understand startups!" - Warren Buffett
 
 ## Closing and Call to Action ##
-  Startup your search at X.ly!
+  Startup your search at https://hawks-xly.herokuapp.com/!
