@@ -11,3 +11,6 @@ dist/
 
 # large crunchbase db scripts
 crunchbase/
+
+# cleardb keys 
+server/config.js
