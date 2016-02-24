@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src ="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone.js"></script>
 </head>
 <body>
@@ -33,6 +33,6 @@
 	$(function(){
 		var app = new AppModel();
 		var appView = new AppView({model: app});
-		$('#container').append(appView.render());
+		$("#container").append(appView.render());
 	});
 	</script>
