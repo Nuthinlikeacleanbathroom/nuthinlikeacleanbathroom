@@ -7,7 +7,7 @@ var path = require('path');
 var rootDir = __dirname + '/../';
 
 module.exports = function(app, express) {
-  // Middleware for formatting stuff and logs
+  // Middleware for formatting requests and logging
   app.use(morgan('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
