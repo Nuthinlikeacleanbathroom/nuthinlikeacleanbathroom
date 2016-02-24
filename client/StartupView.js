@@ -1,8 +1,8 @@
 var StartupView = Backbone.View.extend({
   
-  tagName: 'tr',
+  tagName: 'div',
   
-  template: _.template('<td><%= name %></td><td><%= city %></td><td><%= state_code %></td>'),
+  template: _.template('<p><%= name %>, <%= city %>, <%= state_code %></p>'),
 
   initialize: function(){
     this.fundDetailView = new FundDetailView({model: this.model});

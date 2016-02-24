@@ -1,5 +1,5 @@
 var StartupListView = Backbone.View.extend({
-  tagName: 'table',
+  tagName: 'div',
 
   initialize: function(){
     this.render();
@@ -7,8 +7,7 @@ var StartupListView = Backbone.View.extend({
 
   render: function(){
     this.$el.children().detach();
-    this.$el.html('<th>Financial Organization</th><th>Location</th>').append(
-    this.collection.map(function(startup){
+    this.$el.append(this.collection.map(function(startup){
       return new StartupView({model: startup}).render();
     }));
     return this.$el;
