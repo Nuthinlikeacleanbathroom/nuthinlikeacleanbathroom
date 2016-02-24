@@ -17,8 +17,8 @@ module.exports = function(app, express) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  app.use(favicon(path.join(__dirname + '/../public/favicon.ico')));
-  app.use(express.static(path.join(__dirname + '/../public/client')));
+  app.use(favicon(path.join(__dirname, '/favicon.ico')));
+  app.use(express.static(path.join(__dirname, '/../client')));
 
   router(app);
 };
