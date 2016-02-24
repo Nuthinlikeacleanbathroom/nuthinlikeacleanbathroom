@@ -9,3 +9,5 @@ dist/
 .flooignore
 
 crunchbase/
+
+server/config.js
