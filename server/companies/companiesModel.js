@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var config = require('../config');
+var config = require('../config.js');
 
 // Set connection per dev or deployed version.
 var mysqlPass, mysqlUser, mysqlDatabase, mysqlUri;
