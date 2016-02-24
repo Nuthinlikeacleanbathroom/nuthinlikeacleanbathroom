@@ -12,7 +12,9 @@ var FundDetailView = Backbone.View.extend({
       <p><%= overview %>\
       <br><br><br>\
     </div>'),
-
+  
+  // Fund Detail views are instantiated during StartupView initialization.
+  // They are subviews of StartupView
   initialize: function(){
   },
 
