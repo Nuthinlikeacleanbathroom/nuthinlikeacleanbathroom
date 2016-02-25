@@ -23,13 +23,14 @@ connection.on('error', function(err) {
 connection.on('error', function(err) {
   console.log('Database error', err);
   if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-    var connection = mysql.createConnection({
+    var newConnection = mysql.createConnection({
       host: mysqlUri,
       user: mysqlUser,
       password: mysqlPass,
       database: mysqlDatabase
     });
-    module.exports = connection;
+    newConnection.testtest = 'HELLO WORLD I AM A DIFFERENT OBJECT';
+    module.exports = newConnection;
   } else {
     throw err;
   }
