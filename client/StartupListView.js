@@ -20,10 +20,6 @@ var StartupListView = Backbone.View.extend({
       'click button.findFunds': 'search',
   },
 
-  events: {
-      'click button.findFunds': 'search',
-  },
-
   render: function(){
     this.$el.children().detach();
     this.$el.append(this.$x);
@@ -35,7 +31,6 @@ var StartupListView = Backbone.View.extend({
 
   search: function (){
     var searchName = $('.searchValue').val()
-<<<<<<< dd628712fa2afe8c83ba763c01c696bf15842708
     var models = this.collection.models;
     var collection = [];
     _.each(models, function(model){
@@ -59,14 +54,5 @@ var StartupListView = Backbone.View.extend({
       })
     )
   }
-=======
-    // debugger;
-    console.log(searchName);
-    // var filtered = this.startups.where({ name: searchName});
-    // console.log(filtered);
-    // this.searchresultsView = new StartupListView({model: startup});
-  },
-
->>>>>>> merge
 
 })
