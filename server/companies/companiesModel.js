@@ -5,10 +5,11 @@ var config = require('../config.js');
 var connection = mysql.createConnection(config);
 
 var connection = mysql.createConnection({
-  host: mysqlUri,
-  user: mysqlUser,
-  password: mysqlPass,
-  database: mysqlDatabase
+  // host: mysqlUri,
+  // user: mysqlUser,
+  // password: mysqlPass,
+  // database: mysqlDatabase
+  host: 'mysql://bd358f5252fa06:7fbb12d0@us-cdbr-iron-east-03.cleardb.net/heroku_2df98b5f307ebb3?reconnect=true'
 });
 
 connection.on('error', function(err) {
