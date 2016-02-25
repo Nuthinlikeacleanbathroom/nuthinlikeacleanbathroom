@@ -20,4 +20,12 @@ connection.on('error', function(err) {
   }
 });
 
+connection.on('error', function(err) {
+  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+    connection.connect();
+  } else {
+    throw err;
+  }
+});
+
 module.exports = connection;
