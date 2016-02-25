@@ -13,4 +13,4 @@ dist/
 crunchbase/
 
 # cleardb keys 
-# server/config.js
+server/config.js
