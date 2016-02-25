@@ -7,7 +7,7 @@ var getAll = function(req, res) {
       console.log('There was an error querying the database:', err);
       return res.send(500);
     }
-
+    
     res.status(200).json(results);
   });
 
