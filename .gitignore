@@ -5,7 +5,12 @@ bower_components/
 build/
 dist/
 
+# collaboration tools
 .floo
 .flooignore
 
+# large crunchbase db scripts
 crunchbase/
+
+# cleardb keys 
+# server/config.js

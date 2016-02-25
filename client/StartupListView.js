@@ -7,7 +7,6 @@ var StartupListView = Backbone.View.extend({
     </form>'), 
 
   initialize: function(){
-    this.render();
   },
 
   events: {

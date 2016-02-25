@@ -3,7 +3,7 @@ var StartupView = Backbone.View.extend({
   tagName: 'div',
   
   template: _.template('<p><%= name %>, <%= city %>, <%= state_code %></p>'),
-
+  // Startup Views are instantiated in StartupListView during render().
   initialize: function(){
     this.fundDetailView = new FundDetailView({model: this.model});
   },
