@@ -1,10 +1,10 @@
 var StartupListView = Backbone.View.extend({
   tagName: 'div',
 
-  $x : $('<form>\
-        <input type="" name="" class="searchValue"/>\
-        <button type="button" class="findFunds">SEARCH</button>\
-    </form>'),
+  $x : $('<form action="" id="" method="">\
+        <input type="" name="" class="searchValue" value="Search"/>\
+        <button type="submit" class="findFunds">SEARCH</button>\
+    </form>'), 
 
   initialize: function(){
     var view = this;
@@ -14,6 +14,10 @@ var StartupListView = Backbone.View.extend({
         view.renderSearch();
       }
     })
+  },
+
+  events: {
+      'click button.findFunds': 'search',
   },
 
   events: {
@@ -31,6 +35,7 @@ var StartupListView = Backbone.View.extend({
 
   search: function (){
     var searchName = $('.searchValue').val()
+<<<<<<< dd628712fa2afe8c83ba763c01c696bf15842708
     var models = this.collection.models;
     var collection = [];
     _.each(models, function(model){
@@ -54,5 +59,14 @@ var StartupListView = Backbone.View.extend({
       })
     )
   }
+=======
+    // debugger;
+    console.log(searchName);
+    // var filtered = this.startups.where({ name: searchName});
+    // console.log(filtered);
+    // this.searchresultsView = new StartupListView({model: startup});
+  },
+
+>>>>>>> merge
 
 })
