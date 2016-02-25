@@ -2,8 +2,8 @@ var StartupListView = Backbone.View.extend({
   tagName: 'div',
 
   $x : $('<form action="" id="" method="">\
-        <input type="" name="" class="searchValue" value="Search"/>\
-        <button type="submit" class="findFunds">SEARCH</button>\
+        <input type="" name="" class="searchValue form-control" placeholder="Search"/>\
+        <button type="submit" class="findFunds btn btn-secondary-outline btn-block">Reset</button>\
     </form>'), 
 
   initialize: function(){
