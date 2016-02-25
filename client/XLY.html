@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" type="text/css" href="XLY.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+
+</head>
+
+<body id="index">
+	
+	<div id="header">
+		<h3>HEADER</h3>
+	</div>
+
+	<div id="container">
+		
+		<div id='nav' class="col-md-3" >
+			<input type="text"></input>
+			<button>SEARCH</button>
+			<select >
+				<option value="New York">New York</option>
+				<option value="Denver">Denver</option>
+				<option value="California">California</option>
+				<option value="Colorado">Colorado</option>    
+			</select>
+		</div>
+
+		<div id='content' class="col-md-8">
+			<h1>FUND LIST</h1>
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<h3>FOOTER</h3>
+	</div>
+	
+	<script>
+		var height = window.innerHeight;
+		var width = window.innerWidth;
+		
+		var headerHeight = 100;
+		$('#header').css({'height':headerHeight})
+		var footerHeight = 100;
+		$('#footer').css({'height':footerHeight})
+
+		var containerHeight = height-(headerHeight+footerHeight)-50	
+		$('#container').css({'width':width})
+		$('#container').css({'height':containerHeight})
+		
+		var insideContainer = containerHeight-30;
+		$('#nav').css({'height':insideContainer})
+		$('#content').css({'height':insideContainer})
+	</script>
+
+	
+</body>
+</html>

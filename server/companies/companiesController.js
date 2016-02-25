@@ -8,6 +8,7 @@ var getAll = function(req, res) {
     }
     res.status(200).json(results);
   });
+
 };
 
 module.exports = {
