@@ -15,7 +15,14 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "client/lib",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "d3": "^3.5.16",
+    "backbone": "^1.2.3",
+    "jquery": "^2.2.1",
+    "bootstrap": "^3.3.6"
+  }
 }
