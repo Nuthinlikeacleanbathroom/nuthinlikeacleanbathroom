@@ -10,11 +10,8 @@
 
 <body>
   <!-- Search Option -->
-  <form action="" id="" method="">
-    <input type="" name="" id=""/>
-    <button type="submit">SEARCH</button>
-  </form>
-  
+
+
   <!-- Fund List -->
   <h1> Funds</h1>
   <div id="container">
@@ -30,13 +27,13 @@
   <script src="app.js"></script>
 
   <script type="text/javascript">
-    // Init( ); 
+    // Init( );
     $(function(){
       var app = new AppModel();
       var appView = new AppView({model: app});
       $("#container").append(appView.render());
     });
-  
+
   </script>
 </body>
 </html>
