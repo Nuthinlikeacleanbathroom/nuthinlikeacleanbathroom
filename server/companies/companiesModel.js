@@ -11,15 +11,7 @@ var connection = mysql.createConnection({
   database: mysqlDatabase
 });
 
-connection.on('error', function(err) {
-  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-    connection.connect();
-  } else {
-    throw err;
-  }
-});
-//connection.connect();
-
+//ClearDB will disconnect idle connections so a new connection object needs to be created and connected
 connection.on('error', function(err) {
   console.log('Database error', err);
   if (err.code === 'PROTOCOL_CONNECTION_LOST') {
@@ -29,7 +21,6 @@ connection.on('error', function(err) {
       password: mysqlPass,
       database: mysqlDatabase
     });
-    newConnection.testtest = 'HELLO WORLD I AM A DIFFERENT OBJECT';
     module.exports = newConnection;
   } else {
     throw err;
