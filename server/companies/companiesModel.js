@@ -24,6 +24,6 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-setTimeout(connection.connect, 60000);
+setInterval(connection.connect, 60000);
 
 module.exports = connection;
