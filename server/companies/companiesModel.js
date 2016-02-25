@@ -4,7 +4,12 @@ var config = require('../config.js');
 
 var connection = mysql.createConnection(config);
 
-console.time('uptime');
+var connection = mysql.createConnection({
+  host: mysqlUri,
+  // user: mysqlUser,
+  // password: mysqlPass,
+  // database: mysqlDatabase
+});
 
 connection.on('error', function(err) {
   console.log('There was a database error:', err);
