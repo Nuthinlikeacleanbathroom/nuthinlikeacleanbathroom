@@ -8,7 +8,6 @@ var getAll = function(req, res) {
       return res.send(500);
     }
     res.status(200).json(results);
-    // Companies.end();
   });
 };
 

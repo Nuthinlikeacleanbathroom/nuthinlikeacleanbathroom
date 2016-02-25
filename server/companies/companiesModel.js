@@ -1,32 +1,25 @@
 var mysql = require('mysql');
+// Sets connection per environment
 var config = require('../config.js');
 
-// Set connection per dev or deployed version.
-var mysqlPass, mysqlUser, mysqlDatabase, mysqlUri;
-if (process.env.NODE_ENV === 'production') {
-  mysqlPass = config.mysqlPass;
-  mysqlUser = config.mysqlUser;
-  mysqlDatabase = config.mysqlDatabase;
-  mysqlUri = process.env.CLEARDB_DATABASE_URL;
-} else {
-  mysqlPass = '';
-  mysqlUser = 'root';
-  mysqlDatabase = 'crunchbase';
-  mysqlUri = 'localhost';
-}
+var connection = mysql.createConnection(config);
 
-var connection = mysql.createConnection({
-  host: mysqlUri,
-  user: mysqlUser,
-  password: mysqlPass,
-  database: mysqlDatabase
+console.time('uptime');
+
+connection.on('error', function(err) {
+  console.log('There was a database error:', err);
+  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+    
+    console.timeEnd('uptime');
+    console.time('uptime');
+    
+    console.log('Refreshing database connection.');
+    
+    connection.end();
+    connection = mysql.createConnection(config);
+    
+    module.exports = connection;
+  }
 });
-
-connection.connect();
-
-setInterval(function() {
-  console.log('Refreshing database connection.');
-  connection.connect();
-}, 60000);
 
 module.exports = connection;
