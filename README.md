@@ -20,7 +20,7 @@ The startup phenomenon at a glance.
 
 ## Usage
 
-> Some usage instructions
+Visit https://hawks-xly.herokuapp.com
 
 ## Requirements
 
