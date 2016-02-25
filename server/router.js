@@ -1,8 +1,7 @@
 var express = require('express');
-var companies = require('./companies/companiesController');
+var funds = require('./funds/fundsController');
 
 module.exports = function(app) {
-  app.route('/companies')
-    .get(companies.getAll)
-}
-
+  app.route('/funds')
+    .get(funds.getAll)
+};
