@@ -24,6 +24,9 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-setInterval(connection.connect, 60000);
+setInterval(function() {
+  console.log('Refreshing database connection.');
+  connection.connect();
+}, 60000);
 
 module.exports = connection;
