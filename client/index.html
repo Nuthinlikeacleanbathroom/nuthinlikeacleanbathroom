@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <title>Xly</title>
   <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="XLY.css">
   <script src="lib/underscore/underscore-min.js"></script>
@@ -12,11 +12,17 @@
 </head>
 
 <body>
-  <div id="header">
-    <h1>Funds</h1>
+  <nav id="header" class="navbar navbar-default">
+    <h1 class="text-center">Xly</h1>
+  </nav>
+
+
+  <div id="funds-graphics" class="container-fluid col-md-8">
+    <p class="text-center">Visualization coming soon</p>
   </div>
 
-  <div id="container"></div>
+  <div id="funds-list" class="container-fluid col-md-4"></div>
+
 
   <script src="Funds/FundModel.js"></script>
   <script src="Funds/FundCollection.js"></script>
@@ -32,7 +38,7 @@
     $(function(){
       var app = new AppModel();
       var appView = new AppView({model: app});
-      $("#container").append(appView.render());
+      $("#funds-list").append(appView.render());
     });
 
   </script>

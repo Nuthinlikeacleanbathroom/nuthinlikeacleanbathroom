@@ -1,41 +1,4 @@
-/** {
-	border: 1px solid black;
-	border-radius: 5px;
-}*/
-
-#header {
-	background-color: none;
-	margin: 10px;
-}
-
-#container {
-	background-color: none;
-	margin: 10px;
-}
-
-#foot {
-	background-color: none;
-	margin: 10px;
-}
-
-#nav {
-	background-color: yellow;
-}
-
-#content {
-	background-color: green;
-}
-
-.col-md-3 {
-	background-color: none;
-	margin: 10px;
-	padding: 30px 30px 30px 30px;
-	
-}
-
-.col-md-8 {
-	background-color: none;
-	margin: 10px;
-	padding: 30px;
-	overflow : scroll;
+#funds-list {
+  height: 100vh;
+  overflow: scroll;
 }
