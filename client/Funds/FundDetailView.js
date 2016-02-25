@@ -1,17 +1,15 @@
 var FundDetailView = Backbone.View.extend({
 
   template: _.template(
-    '<div class="fundDetail">\
-      <h2><%= name %></h2>\
-      <h4 style="display:inline">Location:     </h4><%= city %>,<%= state_code %><br>\
-      <h4 style="display:inline">Fund Homepage:     </h4><a href=<%= homepage_url %> ><%= homepage_url %></a><br>\
-      <h4 style="display:inline">Founded:     </h4><%= new Date(founded_at).toDateString() %><br>\
-      <h4 style="display:inline">Companies Invested:     </h4><%= invested_companies %><br>\
-      <h4 style="display:inline">Investment Rounds:     </h4><%= investment_rounds %><br>\
-      <h4>Overview:</h4>\
-      <p><%= overview %>\
-      <br><br><br>\
-    </div>'),
+    '<div class="fundDetail container-fluid">' +
+      '<h2 class="text-center"><%= name %></h2>' +
+      '<div class="col-md-4 text-center"><strong>Location:</strong> <%= city %>,<%= state_code %></div>' +
+      '<div class="col-md-4 text-center"><strong>Fund Homepage:</strong> <a href=<%= homepage_url %> ><%= homepage_url %></a></div>' +
+      '<div class="col-md-4 text-center"><strong>Founded:</strong> <%= new Date(founded_at).toDateString() %></div>' +
+      '<div class="col-md-6 text-center"><strong>Companies Invested:</strong> <%= invested_companies %></div>' +
+      '<div class="col-md-6 text-center"><strong>Investment Rounds:</strong> <%= investment_rounds %></div>' +
+      '<br/><div><strong>Overview:</strong> <p><%= overview %></div>' +
+    '</div>'),
   
   // Fund Detail views are instantiated during StartupView initialization.
   // They are subviews of StartupView
