@@ -3,5 +3,4 @@ var AppModel = Backbone.Model.extend({
 	  this.set('startups', new Startups());
 		this.get('startups').fetch({reset: true});
 	}
-
-})
+});
