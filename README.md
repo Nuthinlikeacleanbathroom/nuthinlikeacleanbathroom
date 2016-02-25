@@ -1,6 +1,6 @@
-# Project Name
+# XLY
 
-> Pithy project description
+The startup phenomenon at a glance.
 
 ## Team
 
@@ -20,15 +20,13 @@
 
 ## Usage
 
-> Some usage instructions
+Visit https://hawks-xly.herokuapp.com
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Node ~4.3.1
+- npm ~2.14.12
+- MySQL ~5.7
 
 ## Development
 
@@ -44,7 +42,7 @@ bower install
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/Nuthinlikeacleanbathroom/nuthinlikeacleanbathroom/issues)
 
 
 ## Contributing
