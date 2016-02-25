@@ -12,27 +12,12 @@ var connection = mysql.createConnection({
 });
 
 connection.on('error', function(err) {
-  console.log('There was a database error:', err);
-  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-    
-    console.timeEnd('uptime');
-    console.time('uptime');
-    
-    console.log('Refreshing database connection.');
-    
-    connection.end();
-    connection = mysql.createConnection(config);
-    
-    module.exports = connection;
-  }
-});
-
-connection.on('error', function(err) {
   if (err.code === 'PROTOCOL_CONNECTION_LOST') {
     connection.connect();
   } else {
     throw err;
   }
 });
+//connection.connect();
 
 module.exports = connection;
