@@ -18,7 +18,11 @@ var FundDetailView = Backbone.View.extend({
   initialize: function(){
   },
 
-  render: function(){
+  render: function(mean, variance, n){
+    this.mean = mean;
+    this.variance = variance;
+    this.n = n;
+    
     var $html = this.$el.html(this.template(this.model.attributes));
     this.plot = d3.select($html[0]).select('.plot')
       .append('svg')
@@ -29,6 +33,12 @@ var FundDetailView = Backbone.View.extend({
   },
   
   plotData: function(){
+    var mean = this.mean;
+    var variance = this.variance;
+    var n = this.n;
+    var rect = this.el.getElementsByTagName('svg')[0].getBoundingClientRect();
+    var svgHeight = rect.height; 
+  
     this.plot.selectAll('circle').remove();
     
     var fundData = [
@@ -54,7 +64,8 @@ var FundDetailView = Backbone.View.extend({
     this.plot.selectAll('circle')
       .transition()
       .attr('r', function(datum) {
-        return datum.val / 50 * 8;
+        var t = (datum.val - mean) * n / Math.sqrt(variance);
+        return t * svgHeight;
       })
       .delay(100)
       .duration(400);      
