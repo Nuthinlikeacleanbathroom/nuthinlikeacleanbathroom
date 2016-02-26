@@ -18,7 +18,7 @@ var FundDetailView = Backbone.View.extend({
   initialize: function(){
   },
 
-  render: function(){
+  render: function(){    
     var $html = this.$el.html(this.template(this.model.attributes));
     this.plot = d3.select($html[0]).select('.plot')
       .append('svg')
