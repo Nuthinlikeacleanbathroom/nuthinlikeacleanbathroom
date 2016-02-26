@@ -14,7 +14,7 @@ var FundView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template(this.model.attributes));
-    this.$el.append(this.fundDetailView.render(this.mean, this.variance, this.n).hide());
+    this.$el.append(this.fundDetailView.render().hide());
     return this.$el;
   },
 
