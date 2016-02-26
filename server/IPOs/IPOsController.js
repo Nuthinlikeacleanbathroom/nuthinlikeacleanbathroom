@@ -1,7 +1,7 @@
 var IPOs = require('./IPOsModel');
 
 module.exports = {
-  //Get all funds
+  //Get all ipos
   get: function(req, res) {
     IPOs.get(function(err, results) {
       if(err) {
