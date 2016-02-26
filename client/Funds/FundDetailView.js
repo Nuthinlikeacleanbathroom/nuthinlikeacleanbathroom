@@ -6,8 +6,8 @@ var FundDetailView = Backbone.View.extend({
       '<div><strong>Location:</strong> <%= city %>,<%= state_code %></div>' +
       '<div><strong>Fund Homepage:</strong> <a href=<%= homepage_url %> ><%= homepage_url %></a></div>' +
       '<div><strong>Founded:</strong> <%= new Date(founded_at).toDateString() %></div>' +
-      '<div><strong>Companies Invested:</strong> <%= invested_companies %></div>' +
-      '<div><strong>Investment Rounds:</strong> <%= investment_rounds %></div>' +
+      '<div class="invested"><strong>Companies Invested:</strong> <%= invested_companies %></div>' +
+      '<div class="rounds"><strong>Investment Rounds:</strong> <%= investment_rounds %></div>' +
       '<div class="plot" data-detail="<%= id %>">' +
       '</div>' +
       '<br/><div><strong>Overview:</strong> <p><%= overview %></div>' +
@@ -37,7 +37,7 @@ var FundDetailView = Backbone.View.extend({
         val: this.model.get('investment_rounds')
       },
       {
-        name: 'companies',
+        name: 'invested',
         val: this.model.get('invested_companies')
       }
     ];
@@ -51,10 +51,9 @@ var FundDetailView = Backbone.View.extend({
       })
       .attr('cy', '50%')
       .attr('cx', '50%')
-      .attr('background-color', function(datum) {
-        return datum.name === 'rounds' ? '#537' : '#AAC';
+      .attr('class', function(datum) {
+        return datum.name;
       })
-      .attr('opacity', .5)
       .attr('r', 0);
       
     this.plot.selectAll('circle')
