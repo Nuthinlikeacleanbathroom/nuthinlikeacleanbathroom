@@ -1,9 +1,9 @@
-var Funds = require('./FundsModel');
+var IPOs = require('./IPOsModel');
 
 module.exports = {
   //Get all funds
   get: function(req, res) {
-    Funds.get(function(err, results) {
+    IPOs.get(function(err, results) {
       if(err) {
         res.sendStatus(500);
       } else {
