@@ -19,7 +19,8 @@ var FundView = Backbone.View.extend({
   },
 
   toggleDetails: function(e){
-    this.fundDetailView.$el.toggle();
+    this.fundDetailView.$el.toggle(200);
+    this.fundDetailView.plotData();
   }
 
 });
