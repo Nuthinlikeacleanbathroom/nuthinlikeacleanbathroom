@@ -49,11 +49,6 @@ var FundDetailView = Backbone.View.extend({
       .attr('class', function(datum) {
         return datum.name;
       })
-      .attr('cy', '50%')
-      .attr('cx', '50%')
-      .attr('class', function(datum) {
-        return datum.name;
-      })
       .attr('r', 0);
       
     this.plot.selectAll('circle')
@@ -62,6 +57,6 @@ var FundDetailView = Backbone.View.extend({
         return datum.val / 50 * 8;
       })
       .delay(100)
-      .duration(250);      
+      .duration(400);      
   }
 });

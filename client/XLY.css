@@ -7,10 +7,14 @@
   color: #537;
   opacity: .5;
   fill: #537;
+  cx: 50%;
+  cy: 50%;
 }
 
 .rounds {
   color: #667;
   opacity: .5;
   fill: #667;
+  cx: 50%;
+  cy: 50%;
 }
