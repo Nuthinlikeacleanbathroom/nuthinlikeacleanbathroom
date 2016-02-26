@@ -11,7 +11,8 @@ var AppView = Backbone.View.extend({
   },
   render: function(){
     this.vizView.render();
-    return this.$el.append(this.startupListView.render());
+    // this.vizView.histogram('invested_companies');
+    this.startupListView.render();
   }
 
 });

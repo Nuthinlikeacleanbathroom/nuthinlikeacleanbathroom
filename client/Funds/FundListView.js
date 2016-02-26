@@ -26,7 +26,7 @@ var StartupListView = Backbone.View.extend({
     this.$el.append(this.collection.map(function(fund){
       return new FundView({model: fund}).render();
     }));
-    return this.$el;
+    $('#funds-list').append(this.$el);
   },
 
   search: function (){
