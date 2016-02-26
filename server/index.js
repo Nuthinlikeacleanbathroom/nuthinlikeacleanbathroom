@@ -7,7 +7,7 @@ var port = process.env.PORT || 8000;
 middleware(app, express);
 
 app.listen(port, function() {
-  console.log('listening on port ', port);
+  console.log('Listening on port:', port);
 });
 
 module.exports = app;

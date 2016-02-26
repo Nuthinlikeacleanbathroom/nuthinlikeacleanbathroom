@@ -1,6 +1,6 @@
 module.exports = {
   get: function(callback) {
-    var query = 'SELECT * FROM fund_list';
+    var query = 'SELECT * FROM ipos';
     //ClearDB disconnects idle connections so the newest connection must be used on every query
     require('../database').query(query, function(err, results) {
       if (err) {
