@@ -23,8 +23,8 @@ var StartupListView = Backbone.View.extend({
   render: function(){
     this.$el.children().detach();
     this.$el.append(this.$x);
-    this.$el.append(this.collection.map(function(startup){
-      return new FundView({model: startup}).render();
+    this.$el.append(this.collection.map(function(fund){
+      return new FundView({model: fund}).render();
     }));
     return this.$el;
   },

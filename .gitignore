@@ -1,8 +1,12 @@
+# dependencies
 node_modules/
 bower_components/
 client/lib/
+
+# logs
 *.log
 
+#compiled dirs
 build/
 dist/
 
