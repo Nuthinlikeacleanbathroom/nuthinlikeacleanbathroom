@@ -2,16 +2,22 @@ var mysql = require('mysql');
 // Sets connection per environment
 var config = require('./config');
 
-var connection = mysql.createConnection(config);
 
 //ClearDB will disconnect idle connections so a new connection object needs to be created and connected
-connection.on('error', function(err) {
-  console.error('Database connection error:', err);
-  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-    module.exports = mysql.createConnection(config);
-  } else {
-    throw err;
-  }
-});
+var handleDisconnect = function() {
+  var connection = mysql.createConnection(config);
+  console.log('Database (re)connecting ...');
+  
+  connection.on('error', function(err) {
+    console.error('Database connection error:', err);
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      handleDisconnect();
+    } else {
+      throw err;
+    }
+  });
 
-module.exports = connection;
+  module.exports = connection;
+};
+
+handleDisconnect();
