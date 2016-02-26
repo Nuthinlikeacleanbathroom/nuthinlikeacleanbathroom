@@ -1,24 +1,15 @@
-var mysql = require('mysql');
-// Sets connection per environment
-var config = require('../config.js');
-
-var connection = mysql.createConnection(config);
-
-console.time('uptime');
-
-//ClearDB will disconnect idle connections so a new connection object needs to be created and connected
-connection.on('error', function(err) {
-  console.log('Database error', err);
-  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-    console.timeEnd('uptime');
-    console.time('uptime');
-    var newConnection = mysql.createConnection(config);
-
-    module.exports = newConnection;
-  } else {
-    throw err;
+module.exports = {
+  get: function(callback) {
+    // Queries DB for all companies for name, city and state columns. This serves the GET request to '/companies'
+    var query = 'SELECT * FROM fund_list';
+    //ClearDB disconnects idle connections so the newest connection must be used on every query
+    require('../database').query(query, function(err, results) {
+      if (err) {
+        console.log('Error querying the database:', err);
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
   }
-});
-
-
-module.exports = connection;
+};

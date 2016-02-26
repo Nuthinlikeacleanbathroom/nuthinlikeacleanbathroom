@@ -1,7 +1,7 @@
 var express = require('express');
-var funds = require('./funds/fundsController');
+var fundsController = require('./Funds/FundsController');
 
 module.exports = function(app) {
   app.route('/funds')
-    .get(funds.getAll)
+    .get(fundsController.get);
 };
