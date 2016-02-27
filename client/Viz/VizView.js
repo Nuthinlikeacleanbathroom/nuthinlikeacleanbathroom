@@ -65,12 +65,16 @@ var VizView = Backbone.View.extend({
         })
         .duration(500);
         
-      this.canvas.selectAll('circle')
+      this.canvas
         .on('mouseover', function(type, listener) {
-          
+          d3.select(this).append('text')
+            .attr('x', '45%')
+            .attr('y', '85%')
+            .attr('class', prop)
+            .html('Histogram of ' + prop + ' values');
         })
         .on('mouseleave', function() {
-          
+          d3.select(this).selectAll('text').remove();
         });
     }, this);    
   },
