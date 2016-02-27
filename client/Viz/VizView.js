@@ -24,20 +24,28 @@ var VizView = Backbone.View.extend({
       var plotData = this.canvas.selectAll('circle')
         .data(this.collection.getPropValues(prop));
         
-      plotData
-        .enter()
+      plotData.enter()
         .append('circle')
         .attr('class', function(datum) {
           return datum.name;
         })
         .attr('class', 'plot-circle')
-        .attr('cx', function(datum) {
+        .attr('cx', function(datum, i) {
           // Ensures relative positions of circles
-          return Math.floor((datum.val - range.min) / range.step) + '%';
+          return Math.floor((datum.val - range.min) / range.step) * .75 + .5 + '%';
         })
         .attr('cy', 0)
+        
+        .attr('cy', function(datum) {
+          // Get count for each data bucket
+          var idx = Math.floor((datum.val - range.min) / range.step);
+          counts[idx] = counts[idx] === undefined ? 0 : ++counts[idx];
+          datum.height = (counts[idx] * range.step) + range.step + 'px';
+          return range.step;
+        })
         .attr('r', range.step - 2 + 'px');
         
+        // Resize the canvas
         var max = _.reduce(counts, function(max, val) {
           if (val > max) {
             return val;
@@ -46,13 +54,23 @@ var VizView = Backbone.View.extend({
           }
         }, 0);
         
-      this.canvas.attr('height', max * range.step);
+      var canvasHeight = (max + 2) * range.step;
+        
+      this.canvas.transition()
+        .attr('height', canvasHeight);
       
-      plotData.transition()
+      this.canvas.selectAll('circle').transition()
         .attr('cy', function(datum) {
-          var idx = Math.floor((datum.val - range.min) / range.step);
-          counts[idx] = counts[idx] === undefined ? 0 : ++counts[idx];
-          return (counts[idx] * range.step) + range.step + 'px';
+          return datum.height;
+        })
+        .duration(500);
+        
+      this.canvas.selectAll('circle')
+        .on('mouseover', function(type, listener) {
+          
+        })
+        .on('mouseleave', function() {
+          
         });
     }, this);    
   },
