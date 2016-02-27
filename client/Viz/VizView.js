@@ -32,15 +32,29 @@ var VizView = Backbone.View.extend({
         })
         .attr('class', 'plot-circle')
         .attr('cx', function(datum) {
+          // Ensures relative positions of circles
           return Math.floor((datum.val - range.min) / range.step) + '%';
         })
+        .attr('cy', 0)
+        .attr('r', range.step - 2 + 'px');
+        
+        var max = _.reduce(counts, function(max, val) {
+          if (val > max) {
+            return val;
+          } else {
+            return max;
+          }
+        }, 0);
+        
+      this.canvas.attr('height', max * range.step);
+      
+      plotData.transition()
         .attr('cy', function(datum) {
           var idx = Math.floor((datum.val - range.min) / range.step);
           counts[idx] = counts[idx] === undefined ? 0 : ++counts[idx];
-          return (counts[idx] * range.step) + '%';
-        })
-        .attr('r', range.step - 2 + 'px')
-    }, this);
+          return (counts[idx] * range.step) + range.step + 'px';
+        });
+    }, this);    
   },
   
   empty: function() {
@@ -48,6 +62,6 @@ var VizView = Backbone.View.extend({
   },
   
   addToBottom: function(elem) {
-    
+    //TODO?
   }
 });

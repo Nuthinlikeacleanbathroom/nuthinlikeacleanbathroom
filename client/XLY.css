@@ -1,9 +1,9 @@
 #funds-list {
-  height: 100vh;
+  height: 80vh;
   overflow: scroll;
 }
 
-.invested {
+.invested_companies {
   color: #537;
   opacity: .5;
   fill: #537;
@@ -11,10 +11,23 @@
   cy: 50%;
 }
 
-.rounds {
+.investment_rounds {
   color: #667;
   opacity: .5;
   fill: #667;
   cx: 50%;
   cy: 50%;
+}
+
+.plot-circle {
+  fill: #537;
+  opacity: .6;
+}
+
+body {
+
+  background: -moz-linear-gradient(top, #bbb4c8 0%, #dfdce6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #bbb4c8 0%,#dfdce6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #bbb4c8 0%,#dfdce6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bbb4c8', endColorstr='#dfdce6',GradientType=0 );
 }

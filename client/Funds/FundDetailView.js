@@ -6,8 +6,8 @@ var FundDetailView = Backbone.View.extend({
       '<div><strong>Location:</strong> <%= city %>,<%= state_code %></div>' +
       '<div><strong>Fund Homepage:</strong> <a href=<%= homepage_url %> ><%= homepage_url %></a></div>' +
       '<div><strong>Founded:</strong> <%= new Date(founded_at).toDateString() %></div>' +
-      '<div class="invested"><strong>Companies Invested:</strong> <%= invested_companies %></div>' +
-      '<div class="rounds"><strong>Investment Rounds:</strong> <%= investment_rounds %></div>' +
+      '<div class="invested_companies"><strong>Companies Invested:</strong> <%= invested_companies %></div>' +
+      '<div class="investment_rounds"><strong>Investment Rounds:</strong> <%= investment_rounds %></div>' +
       '<div class="plot" data-detail="<%= id %>">' +
       '</div>' +
       '<br/><div><strong>Overview:</strong> <p><%= overview %></div>' +
@@ -33,11 +33,11 @@ var FundDetailView = Backbone.View.extend({
     
     var fundData = [
       {
-        name: 'rounds',
+        name: 'investment_rounds',
         val: this.model.get('investment_rounds')
       },
       {
-        name: 'invested',
+        name: 'invested_companies',
         val: this.model.get('invested_companies')
       }
     ];
