@@ -1,74 +1,50 @@
 var VizView = Backbone.View.extend({
   render: function() {
     // Puts exactly one SVG element on #funds-graphics
-    this.canvas = d3.select('#funds-graphics')
-      .selectAll('svg')
-      .data([0])
-      .enter()
+    d3.select('#funds-graphics')
       .append('svg')
       .attr('height', '100%')
       .attr('width', '100%');
+      
+    this.canvas = d3.select('#funds-graphics').select('svg');
   },
   
   histogram: function(props) {
     props = Array.prototype.slice.call(arguments, 0);
-    var range;
+    var range, counts;
     var color = 0x503070;
     
-    this.canvas.data([], function(datum) { 
-      return datum;
-    });
+    this.empty();
     
-    this.canvas.selectAll('*').remove();
-    
+    // Plot each property
     _.each(props, function(prop, i) {
-      range = this.getRange();
+      range = this.collection.getRange(100, prop);
+      counts = [];
       
-      var plotData = this.canvas
-        .data(this.getPropValues(prop));
+      var plotData = this.canvas.selectAll('circle')
+        .data(this.collection.getPropValues(prop));
         
-        plotData.enter()
+      plotData
+        .enter()
         .append('circle')
         .attr('class', function(datum) {
           return datum.name;
         })
         .attr('class', 'plot-circle')
         .attr('cx', function(datum) {
-          return datum.val
+          return Math.floor((datum.val - range.min) / range.step) + '%';
         })
         .attr('cy', function(datum) {
-          
+          var idx = Math.floor((datum.val - range.min) / range.step);
+          counts[idx] = counts[idx] === undefined ? 0 : ++counts[idx];
+          return (counts[idx] * range.step) + '%';
         })
+        .attr('r', range.step - 2 + 'px')
     }, this);
-    
-    
   },
   
-  getRange: function() {
-    return _.reduce(this.collection, function(memo, model, i, collection) {
-        if (i === 0) {
-          memo.min = collection.at(i).get(prop);
-          memo.max = collection.at(i).get(prop);
-        }
-        
-        if (collection.at(i).get(prop) < memo.min) {
-          memo.min = collection.at(i).get(prop);
-        }
-        
-        if (collection.at(i).get(prop) > memo.max) {
-          memo.max = collection.at(i).get(prop);
-        }
-      }, {min: null, max: null}, this.collection);
-  },
-  
-  getPropValues: function(prop) {
-    return _.map(this.collection, function(model, j, collection) {
-      return {
-        name: prop,
-        val: collection.at(j).get(prop),
-        color: color
-      }
-    }, this.collection);
+  empty: function() {
+    this.canvas.selectAll('*').remove();
   },
   
   addToBottom: function(elem) {
