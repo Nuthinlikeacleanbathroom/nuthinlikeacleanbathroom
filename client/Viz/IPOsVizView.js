@@ -4,20 +4,27 @@ var IPOsVizView = Backbone.View.extend({
   },
 
   render: function() {
-    this.canvas = d3.select('#ipo-graphics')
-      .append('svg');
+    var size = 500;
 
+    this.canvas = d3.select('#ipo-graphics')
+      .append('svg')
+      .attr('height', size)
+      .attr('width', '100%');
+
+    //Format data for d3.layout.pack
     var IPOData = {
       "name": "IPOs",
       "children": this.collection.models
     };
 
+    //Specify layout of viz
     var pack = d3.layout.pack()
       .sort(null)
-      .size([500, 500])
+      .size([size, size])
       .value(function(d) { return d.attributes.raised_amount })
       .padding(2);
 
+    //Create groups to contain circle and text pairs
     this.plot = this.canvas
       .selectAll('g')
       .data(pack(IPOData)[0].children)
@@ -47,13 +54,16 @@ var IPOsVizView = Backbone.View.extend({
       })
       .attr("fill", "black")
       .style("text-anchor", "middle")
-      .text(function(d) { return "Stock: " + d.attributes.stock_symbol + " | Raised: " +  d.attributes.raised_amount });
+      .style("visibility", "hidden")
+      .text(function(d) { return "Stock: " + d.attributes.stock_symbol + " | Raised: $" +  d.attributes.raised_amount });
 
-    this.canvas
-      .attr('height', 1000)
-      .attr('width', 1000);
-
-    //console.log(this.collection);
-    //console.log(this.collection.models);
+    //Show or hide text on hover
+    this.plot
+      .on('mouseover', function(type, listener) {
+        d3.select(this).select("text").style("visibility", "visible");
+      })
+      .on('mouseleave', function() {
+        d3.select(this).select("text").style("visibility", "hidden");
+      });
   }
 });
