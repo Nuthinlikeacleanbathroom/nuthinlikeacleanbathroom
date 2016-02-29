@@ -7,21 +7,34 @@ var IPOsVizView = Backbone.View.extend({
     this.canvas = d3.select('#ipo-graphics')
       .append('svg');
 
+    var flare = {
+      "name": "IPOs",
+      "children": this.collection.models
+    }
+
     var pack = d3.layout.pack()
       .sort(null)
       .size([500, 500])
-      .value(function(d) { return d.raised_amount })
+      .value(function(d) { return 1 })
       .padding(5);
 
-      console.log(pack.nodes(this.collection.models));
+    var data = pack(flare)
+    data.shift();
+      console.log(data);
 
     this.plot = this.canvas
       .selectAll('circle')
-      .data(this.collection.models)
+      .data(data)
       .enter()
       .append('circle')
       .attr('r', function(d) {
-        return 3;
+        return d.r;
+      })
+      .attr('cx', function(d) {
+        return d.x;
+      })
+      .attr('cy', function(d) {
+        return d.y;
       });
 
     this.canvas
