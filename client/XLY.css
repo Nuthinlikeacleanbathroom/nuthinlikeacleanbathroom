@@ -1,9 +1,9 @@
 #funds-list {
-  height: 100vh;
+  height: 80vh;
   overflow: scroll;
 }
 
-.invested {
+.invested_companies {
   color: #537;
   opacity: .5;
   fill: #537;
@@ -11,10 +11,26 @@
   cy: 50%;
 }
 
-.rounds {
+.investment_rounds {
   color: #667;
   opacity: .5;
   fill: #667;
   cx: 50%;
   cy: 50%;
+}
+
+.plot-circle {
+  fill: #537;
+  opacity: .6;
+}
+
+body {
+  /*background: rgba(219,219,255,1);
+  background: -moz-linear-gradient(-45deg, rgba(219,219,255,1) 0%, rgba(164,164,191,1) 89%, rgba(94,94,110,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(219,219,255,1)), color-stop(89%, rgba(164,164,191,1)), color-stop(100%, rgba(94,94,110,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(219,219,255,1) 0%, rgba(164,164,191,1) 89%, rgba(94,94,110,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(219,219,255,1) 0%, rgba(164,164,191,1) 89%, rgba(94,94,110,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(219,219,255,1) 0%, rgba(164,164,191,1) 89%, rgba(94,94,110,1) 100%);
+  background: linear-gradient(135deg, rgba(219,219,255,1) 0%, rgba(164,164,191,1) 89%, rgba(94,94,110,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbff', endColorstr='#5e5e6e', GradientType=1 );*/
 }
