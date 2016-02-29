@@ -19,10 +19,6 @@
   cy: 50%;
 }
 
-.float-left {
-  float:left;
-}
-
 .plot-circle {
   fill: #537;
   opacity: .6;
