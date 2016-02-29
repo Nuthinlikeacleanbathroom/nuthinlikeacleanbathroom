@@ -63,7 +63,7 @@ var VizView = Backbone.View.extend({
         .attr('cy', function(datum) {
           return datum.height;
         })
-        .duration(500);
+        .duration(1000);
         
       this.canvas
         .on('mouseover', function(type, listener) {
