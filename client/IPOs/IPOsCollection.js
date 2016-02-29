@@ -1,3 +1,3 @@
-var Funds = Backbone.Collection.extend({
+var IPOs = Backbone.Collection.extend({
     url : '/ipos'
 });

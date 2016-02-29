@@ -14,6 +14,9 @@ var StartupListView = Backbone.View.extend({
         view.renderSearch();
       }
     })
+    this.collection.on('reset', function(){
+      this.render();
+    }, this);
   },
 
   events: {
