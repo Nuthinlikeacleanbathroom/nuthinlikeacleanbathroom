@@ -29,10 +29,10 @@ module.exports = function(app, express) {
   app.use(session({ 
     secret: 'superSecret',
     name: 'cookieSecret',
-    // store: 'sessionStore', // connect mongo session store
+    // store: 'Session_Store', // connect mongo session store
     // proxy: true,
     resave: false,
-    saveUninitialized: true 
+    saveUninitialized: false 
   }));
   app.use(passport.initialize());
   app.use(passport.session());
