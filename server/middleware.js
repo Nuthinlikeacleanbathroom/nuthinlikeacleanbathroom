@@ -3,9 +3,14 @@ var morgan = require('morgan');
 var router = require('./router');
 var favicon = require('express-favicon');
 var path = require('path');
-
 var rootDir = __dirname + '/../';
-
+var passport = require('passport'); 
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+// Config passport strategies
+require('./Auth/passport')(passport); 
+var userDB = require('./Auth/userDB');
 module.exports = function(app, express) {
   // Middleware for formatting requests and logging
   app.use(morgan('dev'));
@@ -19,6 +24,17 @@ module.exports = function(app, express) {
   });
   app.use(favicon(path.join(__dirname, '/favicon.ico')));
   app.use(express.static(path.join(__dirname, '/../client')));
-
-  router(app);
+  app.set('view engine', 'ejs' );
+  app.use(cookieParser());
+  app.use(session({ 
+    secret: 'superSecret',
+    name: 'cookieSecret',
+    // store: 'sessionStore', // connect mongo session store
+    // proxy: true,
+    resave: false,
+    saveUninitialized: true 
+  }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+  router(app, passport);
 };

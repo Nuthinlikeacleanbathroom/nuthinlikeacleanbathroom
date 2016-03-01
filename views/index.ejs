@@ -1,0 +1,50 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Xly</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="XLY.css">
+	<script src="lib/underscore/underscore-min.js"></script>
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/backbone/backbone-min.js"></script>
+	<script src="lib/d3/d3.min.js"></script>
+</head>
+
+<body>
+	<nav id="header" class="navbar navbar-default">
+		<h1 class="text-center">Xly</h1>
+	</nav>
+
+
+  <div class="viz col-md-8 container-fluid">
+    <div id="funds-graphics"></div>
+    <div id="ipo-graphics"></div>
+  </div>
+
+	<div id="funds-list" class="container-fluid col-md-4"></div>
+
+
+	<script src="Funds/FundModel.js"></script>
+	<script src="Funds/FundCollection.js"></script>
+	<script src="Funds/FundListView.js"></script>
+	<script src="Funds/FundView.js"></script>
+	<script src="Funds/FundDetailView.js"></script>
+	<script src="IPOs/IPOsCollection.js"></script>
+	<script src="App/app.js"></script>
+	<script src="App/AppView.js"></script>
+	<script src="Viz/VizView.js"></script>
+	<script src="Viz/IPOsVizView.js"></script>
+
+	<script type="text/javascript">
+		// Init( );
+		$(function(){
+			console.log('calling init');
+			var app = new AppModel();
+			var appView = new AppView({model: app});
+		});
+
+	</script>
+</body>
+</html>

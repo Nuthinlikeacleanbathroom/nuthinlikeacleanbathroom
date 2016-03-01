@@ -4,7 +4,6 @@
   "description": "For anyone looking for a cursory glance at the startup phenomenon.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install",
     "start": "node ./server/index.js"
   },
   "engines": {
@@ -28,6 +27,13 @@
     "express-favicon": "^1.0.1",
     "morgan": "^1.6.1",
     "mysql": "^2.10.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "ejs" : "~2.4.1",
+    "express-session": "~1.13.0",     
+    "passport" : "~0.3.2",         
+    "passport-local" : "~1.0.0",    
+    "bcrypt-nodejs" : "~0.0.3",
+    "cookie-parser": "~1.4.1",
+    "mongoose" : "~4.4.5"
   }
 }
