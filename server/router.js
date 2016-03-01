@@ -28,8 +28,9 @@ module.exports = function(app, passport) {
     //  successRedirect : '/',
     //  failureRedirect : '/signup',
     // }));
+  // TODO: fix for proper auth
   app.route('/funds')
-    .get(util.checkUser, fundsController.get);
+    .get(fundsController.get);
   app.route('/ipos')
-    .get(util.checkUser, iposController.get);
+    .get(iposController.get);
 };
